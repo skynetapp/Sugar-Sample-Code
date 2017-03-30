@@ -1,6 +1,16 @@
 #### Date: 03-30-2017
 #### Description: This document explains the code flow of meeting list using sample code.
 
+#### The Folder Structure is as follows:
+   
+   
+   Root Directory | Description
+------------ | -------------
+nusoap | Folder |
+temp | stores the WSDL Cache | 
+serverlog | saves the log file start time and end time |
+cachewsdl | Gives the results of meeting list |
+
 #### Step 1:
 
 Soap xml code which gets from wsdl url - https://dev2.lytepole.com/sales/soap.php?wsdl. copy the entire xml code and save it as .xml file.
