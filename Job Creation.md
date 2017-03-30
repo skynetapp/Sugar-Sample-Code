@@ -47,7 +47,8 @@ $log = new Logging();
 
 #### Step 4:
 
-Set the path and name of log file.
+- Set the path and name of log file. 
+- Here we are caching the wsdl url and saving it in temp folder so it will not be stored in that folder again and again.
 
   **_Code:_**
 	
