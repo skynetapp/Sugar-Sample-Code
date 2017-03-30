@@ -9,7 +9,7 @@
 nusoap | Folder |
 temp | stores the WSDL Cache | 
 serverlog | saves the log file start time and end time |
-cachewsdl | Gives the results of meeting list |
+cacheWsdlCreateContact | Creates a new contact |
 
 #### Step 1:
 
