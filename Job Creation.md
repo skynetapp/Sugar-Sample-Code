@@ -1,5 +1,5 @@
 #### Date: 03-30-2017
-#### Description: This document explains the code flow of meeting list using sample code.
+#### Description: This document explains the code flow of creating a new job using sample code.
 
 #### The Folder Structure is as follows:
    
@@ -9,7 +9,7 @@
 nusoap | Folder |
 temp | stores the WSDL Cache | 
 serverlog | saves the log file start time and end time |
-cachewsdl | Gives the results of meeting list |
+cacheWsdlJobCreation | Creates a new job |
 
 #### Step 1:
 
