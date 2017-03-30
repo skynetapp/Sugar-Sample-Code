@@ -1,5 +1,5 @@
 #### Date: 03-30-2017
-#### Description: This document explains the code flow of meeting list using sample code.
+#### Description: This document explains the code flow of creating a contact using sample code.
 
 #### The Folder Structure is as follows:
    
