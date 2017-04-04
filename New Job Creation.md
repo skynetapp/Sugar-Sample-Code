@@ -8,7 +8,6 @@
 ------------ | -------------
 nusoap | Folder |
 temp | stores the WSDL Cache | 
-serverlog | saves the log file start time and end time |
 cacheWsdlCreateContact | Creates a new contact |
 
 #### Step 1:
@@ -18,7 +17,7 @@ Soap xml code which gets from wsdl url - https://dev2.lytepole.com/sales/soap.ph
 **_Code:_**
 	
 ```
-$url="somename.xml";
+$url="soapwsdl.xml";
 
 ```
 
@@ -34,28 +33,16 @@ Require nusoap library folder which we already have, or we can get in online als
   
   ```
   
-  #### Step 3:
-  
-  Logging class initialization.
-  
-  **_Code:_**
-	
-```
-	require_once("Logging.php");
-	$log = new Logging();
-```
+#### Step 3:
 
-#### Step 4:
-
-Set the path for log file and store the wsdl cache file.
+Set the path to store the wsdl cache file.
 
 First nusoap try to get the cache file, if cache file not exist it uses the wsdl url and save the cache file in given path
 
 
   **_Code:_**
 	
-```
-	$log->lfile('/var/www/html/soapws/mylog.txt');
+```	
 	$cache = new wsdlcache('/var/www/html/soapws/temp/', 12000);
 
 	$wsdl = $cache->get($url );
@@ -67,7 +54,7 @@ First nusoap try to get the cache file, if cache file not exist it uses the wsdl
  
 ```
 
-#### Step 5:
+#### Step 4:
 
 We have to login with crediantials, user name and password
 
@@ -78,7 +65,7 @@ We have to login with crediantials, user name and password
   	$password = "6ae119e6d4*******************"; (md5 converted password)
 ```
 
-#### Step 6:
+#### Step 5:
 
 Initialise nusoap_client which will accept a WSDL file.
 
@@ -89,17 +76,15 @@ $client = new nusoap_client($wsdl,true);
 
 ```
 
-#### Step 7:
+#### Step 6:
 
-Write message to log file which reports the start time and add the login parameters to WSDL call.
+Add the login parameters to WSDL call.
 
 - Here pass username and password to WSDL call **login** for user login.
 
 **_Code:_**
 	
 ```
-$log->lwrite('Start Time');
-    
 $login_parameters = array(
      'user_auth' => array(
           'user_name' => $username,
@@ -113,7 +98,7 @@ $login_parameters = array(
 $login_result = $client->call('login', $login_parameters);
 ```
 
-#### Step 8:
+#### Step 7:
 
 Get the session id from login result and pass the session id to WSDL call **get_user_id** to get the login user id
 
@@ -128,11 +113,10 @@ $user_id = $client->call("get_user_id", $param_array);
 
 ```
 
-#### Step 9:
+#### Step 8:
 
 Creating the parameters for create new job and pass to WSDL call **set_entry**.
 
-- Here log time reports the end time in the log sheet.
 
 **_Code:_**
 
@@ -165,7 +149,7 @@ $params=array(
                                                          'name_value_list'=>$params)
                                                );
 
- $log->lwrite('End Time');
+
  ```
  
 
