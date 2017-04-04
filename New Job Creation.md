@@ -117,6 +117,8 @@ $user_id = $client->call("get_user_id", $param_array);
 
 Creating the parameters for create new job and pass to WSDL call **set_entry**.
 
+We have to pass values for meeting_empoptions,meeting_skills,meeting_emptype using comma seperated and for meeting_invitees use # for seperate each invitee
+
 
 **_Code:_**
 
