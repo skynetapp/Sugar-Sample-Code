@@ -18,13 +18,13 @@ Soap xml code which gets from wsdl url - https://dev2.lytepole.com/sales/soap.ph
 **_Code:_**
 	
 ```
-$url="devsoapserver.xml";
+$url="somename.xml";
 
 ```
 
 #### Step 2:
 
-Require nusoap library folder which we can get in online also.
+Require nusoap library folder which we already have, or we can get in online also.
 
 **_Code:_**
 	
@@ -41,24 +41,26 @@ Require nusoap library folder which we can get in online also.
   **_Code:_**
 	
 ```
-require_once("Logging.php");
-$log = new Logging();
+Ex :	require_once("Logging.php");
+	$log = new Logging();
 ```
 
 #### Step 4:
 
 Set the path and name of log file.
+Set the path to store the wsdl cache file 
+
 
   **_Code:_**
 	
 ```
-$log->lfile('/var/www/html/soapws/mylog.txt');
-$cache = new wsdlcache('/var/www/html/soapws/temp/', 12000);
+Ex : 	$log->lfile('/var/www/html/soapws/mylog.txt');
+	$cache = new wsdlcache('/var/www/html/soapws/temp/', 12000);
 
 	$wsdl = $cache->get($url );
 	if (is_null($wsdl)) {
-	$wsdl = new wsdl($url );
-	$cache->put($wsdl);
+		$wsdl = new wsdl($url );
+		$cache->put($wsdl);
 	}
   
  
@@ -71,8 +73,8 @@ Dev login phone number and password which is converted to md5.
 **_Code:_**
 	
 ```
- $username = "918099617565";
-  $password = "****************************";
+	$username = user phone number with country code(EX : 19951290200);
+  	$password = "****************************";(md5 converted password Ex : 6ae119e6d41ff218cff40ba61a7ef6c3)
 ```
 
 #### Step 6:
