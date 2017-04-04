@@ -138,28 +138,28 @@ Creating the parameters for create new job and pass to WSDL call **set_entry**.
 
 ```
 $params=array(
-        array('name'=>'name','value'=>'MaheshJobTest'),	
+        array('name'=>'name','value'=>'jobname'),	
         array('name'=>'description','value'=>'Test Job16022017'),
         array('name'=>'date_start', 'value'=>'2017-02-16 06:46:19'),							
         array('name'=>'duration_hours', 'value'=>'0'),
         array('name'=>'duration_minutes', 'value'=>'0'),	
-				array('name'=>'assigned_user_id', 'value'=>$user_id),										
+	array('name'=>'assigned_user_id', 'value'=>$user_id),										
         array('name'=>'location', 'value'=>'Achille,OK'),	
-				array('name'=>'company', 'value'=>'skynet new'),		
+	array('name'=>'company', 'value'=>'skynet new'),		
         array('name'=>'max_invitee', 'value'=>'5000'),	
         array('name'=>'invitee_c_invite', 'value'=>'1'),
-				array('name'=>'event_type', 'value'=>'Discussion'),
+	array('name'=>'event_type', 'value'=>'Discussion'),
         array('name'=>'access_type', 'value'=>'Private'),	
         array('name'=>'email', 'value'=>'mahesh.pattepu@skynetappdev.com'),	
-				array('name'=>'experience', 'value'=>'3'),
-				array('name'=>'referral_fee', 'value'=>''),
-				array('name'=>'meeting_empoptions', 'value'=>'Full Time,Telecommute,Student,EAD,GC'),
-				array('name'=>'meeting_skills', 'value'=>'Methodology,Product Reliability'),
-				array('name'=>'meeting_emptype', 'value'=>'Hourly Rate:300,Yearly Rate:2000,Additional Compensation Details:testing'),
-				array('name'=>'meeting_invitees', 'value'=>'name:Docomo  #mname:#lname:#phone:919030187616#email:kushalp77@gmail.com#phone_actual:919030187616#to_name:Docomo  #from_name:'),
-						
-                            );
-		$set_entry_result = $client->call('set_entry',array(
+	array('name'=>'experience', 'value'=>'3'),
+	array('name'=>'referral_fee', 'value'=>''),
+	array('name'=>'meeting_empoptions', 'value'=>'Full Time,Telecommute,Student,EAD,GC'),
+	array('name'=>'meeting_skills', 'value'=>'Methodology,Product Reliability'),
+	array('name'=>'meeting_emptype', 'value'=>'Hourly Rate:300,Yearly Rate:2000,Additional Compensation Details:testing'),
+	array('name'=>'meeting_invitees', 'value'=>'name:Docomo  	#mname:#lname:#phone:919030187616#email:kushalp77@gmail.com#phone_actual:919030187616#to_name:Docomo  #from_name:'),						
+    );
+	
+	$set_entry_result = $client->call('set_entry',array(
                                                          'session'=>$session_id,
                                                          'module_name'=>'Meetings',
                                                          'name_value_list'=>$params)
