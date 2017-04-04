@@ -1,4 +1,4 @@
-#### Date: 03-30-2017
+#### Date: 04-04-2017
 #### Description: This document explains the code flow of creating a contact using sample code.
 
 #### The Folder Structure is as follows:
@@ -137,31 +137,29 @@ Creating the parameters for create new contact and pass to WSDL call **set_conta
 **_Code:_**
 	
 ```
-$params=array(
-								array('name'=>'ContactId', 'value'=>''),   
-                                array('name'=>'first_name', 'value'=>'MaheshTest'),     
-								array('name'=>'last_name', 'value'=>'Test111'),
-								array('name'=>'fax_home', 'value'=>''),   
-								array('name'=>'email', 'value'=>'mahesh.pattepu@skynetappdev.com'),
-								array('name'=>'Description', 'value'=>''),   
-								array('name'=>'account_sugar_id', 'value'=>''),   
-								array('name'=>'serial_number', 'value'=>''),      
-								array('name'=>'deleted', 'value'=>'0'),   	                               
-								array('name'=>'phone_home_group', 'value'=>''),  
-								array('name'=>'phone_work_group', 'value'=>''), 
-								array('name'=>'phone_mobile_group', 'value'=>'918099617566'), 
-								array('name'=>'phone_main_group', 'value'=>''), 
-								array('name'=>'phone_iphone_group', 'value'=>''), 
-								array('name'=>'blocked', 'value'=>'0'),                               
-                         );
-						 
+	$params=array(
+			array('name'=>'ContactId', 'value'=>''),   
+                        array('name'=>'first_name', 'value'=>'MaheshTest'),     
+			array('name'=>'last_name', 'value'=>'Test111'),
+			array('name'=>'fax_home', 'value'=>''),   
+			array('name'=>'email', 'value'=>'mahesh.pattepu@skynetappdev.com'),
+			array('name'=>'Description', 'value'=>''),   
+			array('name'=>'account_sugar_id', 'value'=>''),   
+			array('name'=>'serial_number', 'value'=>''),      
+			array('name'=>'deleted', 'value'=>'0'),   	                               
+			array('name'=>'phone_home_group', 'value'=>''),  
+			array('name'=>'phone_work_group', 'value'=>''), 
+			array('name'=>'phone_mobile_group', 'value'=>'918099617566'), 
+			array('name'=>'phone_main_group', 'value'=>''), 
+			array('name'=>'phone_iphone_group', 'value'=>''), 
+			array('name'=>'blocked', 'value'=>'0'),                               
+                     );						 
 		
-		$set_entry_result = $client->call('set_contacts_acc',array('session'=>$session_id,
-																	'user_id'=>$user_id,
-                                                                    'created_by'=>$user_id,
-																	'assigned_user_id'=>$user_id,
-                                                                   	'name_value_lists'=>array('name_value_list'=>$params)
-                                               ));
+	$set_entry_result = $client->call('set_contacts_acc',array('session'=>$session_id,														   'user_id'=>$user_id,
+                                                                   'created_by'=>$user_id,														   'assigned_user_id'=>$user_id,
+                                                                   'name_value_lists'=>array('name_value_list'=>$params)
+                                                                 )
+					 );
 
 echo $log->lwrite('End Time');
  ```
