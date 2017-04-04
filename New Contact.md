@@ -41,7 +41,7 @@ Require nusoap library folder which we already have, or we can get in online als
   **_Code:_**
 	
 ```
-Ex :	require_once("Logging.php");
+	require_once("Logging.php");
 	$log = new Logging();
 ```
 
@@ -55,7 +55,7 @@ First nusoap try to get the cache file, if cache file not exist it uses the wsdl
   **_Code:_**
 	
 ```
-Ex : 	$log->lfile('/var/www/html/soapws/mylog.txt');
+ 	$log->lfile('/var/www/html/soapws/mylog.txt');
 	$cache = new wsdlcache('/var/www/html/soapws/temp/', 12000);
 
 	$wsdl = $cache->get($url );
