@@ -47,8 +47,9 @@ Ex :	require_once("Logging.php");
 
 #### Step 4:
 
-Set the path and name of log file.
-Set the path to store the wsdl cache file 
+Set the path for log file and store the wsdl cache file.
+
+First nusoap try to get the cache file, if cache file not exist it uses the wsdl url and save the cache file in given path
 
 
   **_Code:_**
@@ -68,13 +69,13 @@ Ex : 	$log->lfile('/var/www/html/soapws/mylog.txt');
 
 #### Step 5:
 
-Dev login phone number and password which is converted to md5.
+We have to login with crediantials, user name and password
 
 **_Code:_**
 	
 ```
-	$username = user phone number with country code(EX : 19951290200);
-  	$password = "****************************";(md5 converted password Ex : 6ae119e6d41ff218cff40ba61a7ef6c3)
+	$username = "19951XXXXXX"; (user phone number with country code)
+  	$password = "6ae119e6d4*******************"; (md5 converted password)
 ```
 
 #### Step 6:
@@ -92,7 +93,7 @@ $client = new nusoap_client($wsdl,true);
 
 Write message to log file which reports the start time and add the login parameters to WSDL call.
 
-- Here login parameters are created and passed to WSDL call **login**.
+- Here pass username and password to WSDL call **login** for user login.
 
 **_Code:_**
 	
@@ -114,9 +115,8 @@ $login_result = $client->call('login', $login_parameters);
 
 #### Step 8:
 
-Get the session id and pass the session id to get the login user id.
+Get the session id from login result and pass the session id to WSDL call **get_user_id** to get the login user id
 
-- Create the parameters session id in array and pass the parameters to WSDL call **get_user_id**.
 
 **_Code:_**
 	
@@ -130,7 +130,7 @@ $user_id = $client->call("get_user_id", $param_array);
 
 #### Step 9:
 
-Creating the parameters and passing the parameters to WSDL call **set_contacts_acc**.
+Creating the parameters for create new contact and pass to WSDL call **set_contacts_acc**.
 
 - Here log time reports the end time in the log sheet.
 
