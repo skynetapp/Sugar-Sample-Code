@@ -156,7 +156,7 @@ $params=array(
 	array('name'=>'meeting_empoptions', 'value'=>'Full Time,Telecommute,Student,EAD,GC'),
 	array('name'=>'meeting_skills', 'value'=>'Methodology,Product Reliability'),
 	array('name'=>'meeting_emptype', 'value'=>'Hourly Rate:300,Yearly Rate:2000,Additional Compensation Details:testing'),
-	array('name'=>'meeting_invitees', 'value'=>'name:Docomo  	#mname:#lname:#phone:919030187616#email:kushalp77@gmail.com#phone_actual:919030187616#to_name:Docomo  #from_name:'),						
+	array('name'=>'meeting_invitees', 'value'=>'name:Docomo#mname:#lname:#phone:919030187616#email:kushalp77@gmail.com#phone_actual:919030187616#to_name:Docomo  #from_name:'),						
     );
 	
 	$set_entry_result = $client->call('set_entry',array(
