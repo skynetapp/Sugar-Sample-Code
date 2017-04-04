@@ -129,7 +129,7 @@ $user_id = $client->call("get_user_id", $param_array);
 
 #### Step 9:
 
-Creating the parameters and passing the parameters to WSDL call **get_entry_list_meetings_web**.
+Creating the parameters and passing the parameters to WSDL call **set_entry**.
 
 - Here log time reports the end time in the log sheet.
 
