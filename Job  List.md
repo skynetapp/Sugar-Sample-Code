@@ -73,7 +73,7 @@ We have to login with crediantials, user name and password
 **_Code:_**
 	
 ```
-	  $username = "19951XXXXXX"; (user phone number with country code)
+	$username = "19951XXXXXX"; (user phone number with country code)
   	$password = "6ae119e6d4*******************"; (md5 converted password)
 ```
 
